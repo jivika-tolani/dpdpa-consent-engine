@@ -6,7 +6,7 @@ A backend service that automatically manages user consent and data deletion in l
 
 Under India's data protection law, a company must delete a person's data as soon as that person withdraws their consent. At the same time, other Indian laws often require companies to keep certain records for a fixed number of years, regardless of what the customer wants.
 
-This creates a direct conflict between two different legal obligations. Handled manually, that conflict is slow, inconsistent, and easy to get wrong, and getting it wrong can mean significant financial penalties.
+This creates a direct conflict between two different legal obligations. Handled manually, that conflict is slow, inconsistent and easy to get wrong, and getting it wrong can mean significant financial penalties.
 
 ## Where This Conflict Shows Up
 
@@ -27,13 +27,13 @@ In every one of these cases, the business cannot simply delete the data the mome
 
 The service acts as an automatic decision-maker that sits between "a customer withdrew consent" and "the data is actually deleted." Whenever consent is withdrawn, it checks:
 
-- Does any other law require this data to be kept for a fixed period? If so, the data is locked in a secure, read-only state until that period ends, instead of being deleted.
+- Does any other law require this data to be kept for a fixed period? If so, the data is locked in a secure, read-only state until that period ends instead of being deleted.
 - Is there no such requirement? Then the data is scheduled for deletion, and it is deleted automatically once the required waiting period passes.
-- Has the person simply gone quiet for a very long time without withdrawing consent or using the service? For a small number of large platforms, the law treats this the same as a withdrawal, and the same process applies. For everyone else, the system flags the record for a human reviewer, because the law has not yet set a fixed time period for those cases.
+- Has the person simply gone quiet for a very long time without withdrawing consent or using the service? For a small number of large platforms, the law treats this the same as a withdrawal and the same process applies. For everyone else, the system flags the record for a human reviewer because the law has not yet set a fixed time period for those cases.
 
-Every decision the system makes — every time a status changes — is written to a permanent, tamper-evident record. If someone tried to alter that history afterward, the system would detect it. This gives the company a clear, defensible paper trail for regulators and auditors.
+Every decision the system makes, every time a status changes, it is written to a permanent, tamper-evident record. If someone tried to alter that history afterward, the system would detect it. This gives the company a clear, defensible paper trail for regulators and auditors.
 
-A human compliance officer can also step in at any time to manually force a deletion or a hold, for example if a customer's loan has been fully repaid ahead of schedule.
+A human compliance officer can also step in at any time to manually force a deletion or a hold:- for example if a customer's loan has been fully repaid ahead of schedule.
 
 ## How to Use the Code
 
