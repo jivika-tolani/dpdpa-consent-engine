@@ -6,7 +6,7 @@ A backend service that automatically manages user consent and data deletion in l
 
 Under India's data protection law, a company must delete a person's data as soon as that person withdraws their consent. At the same time, other Indian laws often require companies to keep certain records for a fixed number of years, regardless of what the customer wants.
 
-This creates a direct conflict between two different legal obligations. Handled manually, that conflict is slow, inconsistent and easy to get wrong, and getting it wrong can mean significant financial penalties.
+This creates a direct conflict between two different legal obligations. Handled manually, that conflict is slow, inconsistent and easy to get wrong and getting it wrong can mean significant financial penalties.
 
 ## Where This Conflict Shows Up
 
