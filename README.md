@@ -77,9 +77,9 @@ This runs 46 automated checks covering the core scenarios (consent given, consen
 |---|---|
 | Record a new consent | A customer agrees to their data being used for a stated purpose |
 | Withdraw consent | A customer takes back that agreement, triggering the deletion-or-hold decision |
-| Check status | See whether a customer's data is active, held, or scheduled for deletion |
+| Check status | See whether a customer's data is active, held or scheduled for deletion |
 | Reactivate | Cancel a pending deletion if the customer re-engages in time |
-| Manual override | Allow a compliance officer to force a deletion or a hold, with the reason recorded |
+| Manual override | Allow a compliance officer to force a deletion or a hold with the reason recorded |
 | Run deletion | Carry out scheduled deletions once their waiting period has passed |
 | Verify history | Confirm that a record's history has not been tampered with |
 
