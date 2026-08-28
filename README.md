@@ -6,7 +6,11 @@ A backend service that automatically manages user consent and data deletion in l
 
 Under India's data protection law, a company must delete a person's data as soon as that person withdraws their consent. At the same time, other Indian laws often require companies to keep certain records for a fixed number of years, regardless of what the customer wants.
 
+<<<<<<< HEAD
 This creates a direct conflict between two different legal obligations. Handled manually, that conflict is slow, inconsistent, and easy to get wrong, and getting it wrong can mean significant financial penalties.
+=======
+This creates a direct conflict between two different legal obligations. Handled manually, that conflict is slow, inconsistent and easy to get wrong and getting it wrong can mean significant financial penalties.
+>>>>>>> 7719e5382eea59a6cb21904d5bf6ab4957b0048d
 
 ## Where This Conflict Shows Up
 
@@ -21,6 +25,7 @@ This is not a problem unique to one industry. The table below shows how it plays
 | **EdTech** (not yet implemented) | A student finishes a certification course and asks for their account to be deleted. | Education regulator record-keeping norms | Varies |
 | **Ride-Hailing / Delivery** (not yet implemented) | A user deletes their profile after a disputed ride or payment. | Consumer protection and transport rules | Until the dispute is resolved |
 
+<<<<<<< HEAD
 In every one of these cases, the business cannot simply delete the data the moment the customer asks, because doing so would break a different law. This project automates the decision of what to do instead — hold the data securely, or delete it — for the cases it currently supports.
 
 ## How It Solves the Problem
@@ -34,6 +39,21 @@ The service acts as an automatic decision-maker that sits between "a customer wi
 Every decision the system makes — every time a status changes — is written to a permanent, tamper-evident record. If someone tried to alter that history afterward, the system would detect it. This gives the company a clear, defensible paper trail for regulators and auditors.
 
 A human compliance officer can also step in at any time to manually force a deletion or a hold, for example if a customer's loan has been fully repaid ahead of schedule.
+=======
+In every one of these cases, the business cannot simply delete the data the moment the customer asks, because doing so would break a different law. This project automates the decision of what to do instead, to hold the data securely or to delete it for whatever cases it currently supports.
+
+## How It Solves the Problem
+
+The service acts as an automatic decision-maker that sits between "a customer withdrew consent" and "the data is actually deleted." Whenever consent is withdrawn and checks if:
+
+- Any other law require this data to be kept for a fixed period? If so, the data is locked in a secure, read-only state until that period ends instead of being deleted.
+- Is there no such requirement? Then the data is scheduled for deletion, and it is deleted automatically once the required waiting period passes.
+- Has the person simply gone quiet for a very long time without withdrawing consent or using the service? For a small number of large platforms, the law treats this the same as a withdrawal and the same process applies. For everyone else, the system flags the record for a human reviewer because the law has not yet set a fixed time period for those cases.
+
+Every decision the system makes, every time a status changes, it is written to a permanent, tamper-evident record. If someone tried to alter that history afterward, the system would detect it. This gives the company a clear, defensible paper trail for regulators and auditors.
+
+A human compliance officer can also step in at any time to manually force a deletion or a hold:- for example if a customer's loan has been fully repaid ahead of schedule.
+>>>>>>> 7719e5382eea59a6cb21904d5bf6ab4957b0048d
 
 ## How to Use the Code
 
@@ -77,9 +97,15 @@ This runs 46 automated checks covering the core scenarios (consent given, consen
 |---|---|
 | Record a new consent | A customer agrees to their data being used for a stated purpose |
 | Withdraw consent | A customer takes back that agreement, triggering the deletion-or-hold decision |
+<<<<<<< HEAD
 | Check status | See whether a customer's data is active, held, or scheduled for deletion |
 | Reactivate | Cancel a pending deletion if the customer re-engages in time |
 | Manual override | Allow a compliance officer to force a deletion or a hold, with the reason recorded |
+=======
+| Check status | See whether a customer's data is active, held or scheduled for deletion |
+| Reactivate | Cancel a pending deletion if the customer re-engages in time |
+| Manual override | Allow a compliance officer to force a deletion or a hold with the reason recorded |
+>>>>>>> 7719e5382eea59a6cb21904d5bf6ab4957b0048d
 | Run deletion | Carry out scheduled deletions once their waiting period has passed |
 | Verify history | Confirm that a record's history has not been tampered with |
 
